@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Loading...</title>
+    <link id="favicon" rel="icon" href="" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+        }
+
+        nav {
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .nav-title {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .nav-title img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav .nav-right {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        nav a,
+        nav button {
+            color: white;
+            text-decoration: none;
+            margin: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Dropdown Styles */
+        nav .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        nav .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            /* Position the dropdown content on the left */
+            background-color: #f9f9f9;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        nav .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show dropdown content only on hover */
+        nav .dropdown:hover>.dropdown-content {
+            display: block;
+        }
+
+        /* Submenu Styles */
+        .dropdown-submenu {
+            position: relative;
+            padding: 8px 16px;
+        }
+
+        .dropdown-submenu button {
+            color: black;
+        }
+
+        .dropdown-submenu>.dropdown-content {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            /* Default: Position submenu to the left of its parent */
+            background-color: #f9f9f9;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            max-width: 220px;
+        }
+
+        /* Adjust submenu position if it's off-screen */
+        .dropdown-submenu:hover>.dropdown-content {
+            display: block;
+        }
+
+        /* Prevent horizontal overflow by checking if submenu goes off-screen */
+        .dropdown-submenu>.dropdown-content {
+            left: auto;
+            right: 100%;
+            /* Position submenu to the left of the parent */
+        }
+
+        /* Submenu Links */
+        .dropdown-submenu>.dropdown-content a {
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-submenu>.dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        #content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        footer.fixed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #d63384;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav id="main-nav" style="background-color: #333;">
+        <div class="nav-title" id="nav-title">
+            <!-- The logo/icon will be inserted dynamically -->
+        </div>
+        <div class="nav-right">
+            <div class="dropdown">
+                <button id="nav-pages-title">Loading...</button>
+                <div class="dropdown-content" id="pages-dropdown">
+                    <!-- Pages will be dynamically added here -->
+                </div>
+            </div>
+            <div id="external-nav-item" style="margin-left: 20px;"></div>
+        </div>
+    </nav>
+    <div id="content">Loading...</div>
+    <footer id="footer" class="footer">Loading footer...</footer>
+
+    <script>
+        function loadSettings() {
+            fetch('settings.json')
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Fetch success!");
+
+                    // Set site name and favicon
+                    document.title = data.sitename || "Microblog by PixelFox.io";
+                    document.getElementById("favicon").href = data.favicon || "favicon.ico";
+
+                    // Configure navigation
+                    const nav = document.getElementById("main-nav");
+                    const navTitle = document.getElementById("nav-title");
+
+                    // Add logo or title
+                    if (data.navigation?.logo?.enabled) {
+                        const logo = document.createElement("img");
+                        logo.src = data.navigation.logo.url;
+                        logo.alt = "Logo";
+                        navTitle.appendChild(logo);
+                    }
+                    navTitle.appendChild(document.createTextNode(data.navigation?.title || "Microblog"));
+                    navTitle.onclick = () => loadPage(data["base-page"] || "readme.md");
+
+                    const navPagesTitle = document.getElementById("nav-pages-title");
+                    navPagesTitle.textContent = data.navigation?.["pages-title"] || "Posts";
+
+                    if (data.navigation?.color) {
+                        nav.style.backgroundColor = data.navigation.color;
+                    }
+
+                    if (data.navigation?.sticky) {
+                        nav.style.position = "sticky";
+                        nav.style.top = "0";
+                        nav.style.zIndex = "1000";
+                    } else {
+                        nav.style.position = "static";
+                    }
+
+                    // Populate dropdown menu
+                    const dropdown = document.getElementById("pages-dropdown");
+                    const categories = {};
+
+                    data.pages.forEach(page => {
+                        if (page.enabled) {
+                            const category = page.category || "none";
+
+                            if (category === "none") {
+                                // Add directly to the main dropdown
+                                const link = document.createElement("a");
+                                link.textContent = page.title;
+                                link.href = page.external ? page.file : "#";
+                                if (!page.external) link.onclick = () => loadPage(page.file);
+                                dropdown.appendChild(link);
+                            } else {
+                                // Create or find the category dropdown
+                                if (!categories[category]) {
+                                    // Create a submenu container
+                                    const submenuContainer = document.createElement("div");
+                                    submenuContainer.className = "dropdown-submenu";
+
+                                    // Submenu title
+                                    const submenuTitle = document.createElement("button");
+                                    submenuTitle.textContent = category;
+                                    submenuContainer.appendChild(submenuTitle);
+
+                                    // Submenu content
+                                    const submenuContent = document.createElement("div");
+                                    submenuContent.className = "dropdown-content";
+                                    submenuContainer.appendChild(submenuContent);
+
+                                    dropdown.appendChild(submenuContainer);
+                                    categories[category] = submenuContent;
+                                }
+
+                                // Add the page link to the category
+                                const link = document.createElement("a");
+                                link.textContent = page.title;
+                                link.href = page.external ? page.file : "#";
+                                if (!page.external) link.onclick = () => loadPage(page.file);
+                                categories[category].appendChild(link);
+                            }
+                        }
+                    });
+
+                    // Add external link if enabled
+                    if (data.navigation?.["external-url"]?.enabled) {
+                        const externalContainer = document.getElementById("external-nav-item");
+                        const externalLink = document.createElement("a");
+                        externalLink.href = data.navigation["external-url"].url;
+                        externalLink.textContent = data.navigation["external-url"].title;
+                        externalLink.target = "_blank";
+                        externalLink.rel = "noopener noreferrer";
+                        externalContainer.appendChild(externalLink);
+                    }
+
+                    // Configure footer
+                    const footer = document.getElementById("footer");
+                    if (data.footer?.enabled) {
+                        footer.textContent = data.footer.content;
+                        footer.style.backgroundColor = data.footer.color || "#333";
+                        if (data.footer.fixed) {
+                            footer.classList.add("fixed");
+                        } else {
+                            footer.classList.remove("fixed");
+                        }
+
+                        if (data.credits) {
+                            const creditsDiv = document.createElement("div");
+                            const creditsText = document.createTextNode("Made with ");
+                            const creditsLink = document.createElement("a");
+                            creditsLink.href = "https://github.com";
+                            creditsLink.textContent = "Microblog";
+                            creditsLink.target = "_blank";
+
+                            creditsDiv.appendChild(creditsText);
+                            creditsDiv.appendChild(creditsLink);
+                            footer.appendChild(document.createElement("br"));
+                            footer.appendChild(creditsDiv);
+                        }
+                    }
+
+                    // Load the default page
+                    loadPage(data["base-page"] || "readme.md");
+                })
+                .catch(error => {
+                    console.error("Error loading settings.json:", error);
+                });
+        }
+
+        // Function to load a page into the content area
+        function loadPage(filePath) {
+            fetch(filePath)
+                .then(response => response.ok ? response.text() : Promise.reject(`HTTP error! status: ${response.status}`))
+                .then(markdown => {
+                    document.getElementById('content').innerHTML = marked.parse(markdown);
+                })
+                .catch(error => {
+                    document.getElementById('content').textContent = "Error loading Markdown file.";
+                    console.error("Error:", error);
+                });
+        }
+
+        // Load settings.json on page load
+        loadSettings();
+    </script>
+
+</body>
+
+</html>

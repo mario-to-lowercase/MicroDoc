@@ -1,0 +1,47 @@
+{
+  "sitename": "Microblog | PixelFox.io",
+  "base-page": "readme.md",
+  "favicon": "favicon.ico",
+  "navigation": {
+    "title": "Microblog",
+    "logo": {
+      "enabled": true,
+      "url": "fox.png"
+    },
+    "pages-title": "Posts",
+    "color": "#1e90ff",
+    "sticky": true,
+    "external-url": {
+      "enabled": true,
+      "title": "GitHub",
+      "url": "https://github.com/mario-fox/Microblog"
+    }
+  },
+  "footer": {
+    "enabled": true,
+    "color": "#333",
+    "fixed": false,
+    "content": "© 2024 PixelFox.io | All rights reserved."
+  },
+  "pages": [
+    {
+      "file": "readme.md",
+      "title": "Readme",
+      "category": "General",
+      "enabled": true
+    },
+    {
+      "file": "LICENSE.md",
+      "title": "License",
+      "category": "General",
+      "enabled": true
+    },
+    {
+      "file": "demo.md",
+      "title": "Markdown Overview",
+      "category": "none",
+      "enabled": true
+    }
+  ],
+  "credits": true
+}
