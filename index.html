@@ -15,16 +15,23 @@
         <div class="nav-title" id="nav-title">
             <!-- The logo/icon will be inserted dynamically -->
         </div>
-        <div class="nav-right">
-            <div class="dropdown">
-                <button id="nav-pages-title">Loading...</button>
-                <div class="dropdown-content" id="pages-dropdown">
-                    <!-- Pages will be dynamically added here -->
-                </div>
-            </div>
+        <div class="nav-right" id="nav-right">
+            <button id="nav-pages-title">Loading...</button>
             <div id="external-nav-item" style="margin-left: 20px;"></div>
         </div>
+        <button class="hamburger" id="hamburger-menu">
+            &#9776;
+        </button>
     </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <button id="close-sidebar" class="close-btn">&times;</button>
+        <div id="sidebar-content">
+            <!-- Pages will be dynamically added here -->
+        </div>
+    </div>
+
     <div id="content">Loading...</div>
     <footer id="footer" class="footer">Loading footer...</footer>
 

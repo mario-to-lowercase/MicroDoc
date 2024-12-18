@@ -9,7 +9,7 @@
   Write and format posts using Markdown for a clean and intuitive writing experience.
 
 - **🚀 Lightweight and Fast**  
-  Built with only three files (HTML, CSS, and JS), Microblog is small, efficient, and easy to set up.
+  Built with only four files (HTML, CSS, JS and JSON), Microblog is small, efficient, and easy to set up.
 
 - **📂 File-Based Storage**  
   Posts are stored as plain `.md` files—no database or complicated setups required.  
@@ -30,7 +30,6 @@ Explore the features and experience how easy it is to create and manage your blo
 ## 🛠️ Upcoming Features (Todo)  
 
 - **Themes**: Add and customize themes to suit your preferences.
-- **Responsive Design**: Improve usability across devices.
 - **Admin Page**: Manage posts with a built-in Markdown editor.
 
 ---
@@ -81,8 +80,9 @@ Below is a breakdown of the key settings and their purpose.
     - `url`: Path to your image file
   - `color`: The hex colorcode used for the navigation.
   - `sticky`: When set to true, the navigation bar will remain at the top of the page when scrolling.
-  - `pages-title`: The label used for the posts section in the navigation.
+  - `pages-title`: The label used for the posts section in the navigation (for desktop devices).
   - `external-url`: Defines an external URL to be added to the navigation, such as a GitHub link.
+  - `sidebar-color`: The hex colorcode used for the sidebar (mobile navigation)
 - Example:
   ```json
     "navigation": {
@@ -98,7 +98,8 @@ Below is a breakdown of the key settings and their purpose.
           "enabled": true,
           "title": "GitHub",
           "url": "https://github.com/mario-fox/Microblog"
-      }
+      },
+      "sidebar-color": "#4d4d4d"
     }
   ```
 ### 📄 pages

@@ -5,17 +5,15 @@ function loadSettings() {
             return response.json();
         })
         .then(data => {
-            console.log("Fetch success!");
+            console.log("Settings loaded successfully");
 
-            // Set site name and favicon
+            // site name & favicon
             document.title = data.sitename || "Microblog by PixelFox.io";
             document.getElementById("favicon").href = data.favicon || "favicon.ico";
 
-            // Configure navigation
+            // navigation
             const nav = document.getElementById("main-nav");
             const navTitle = document.getElementById("nav-title");
-
-            // Add logo or title
             if (data.navigation?.logo?.enabled) {
                 const logo = document.createElement("img");
                 logo.src = data.navigation.logo.url;
@@ -24,9 +22,6 @@ function loadSettings() {
             }
             navTitle.appendChild(document.createTextNode(data.navigation?.title || "Microblog"));
             navTitle.onclick = () => loadPage(data["base-page"] || "readme.md");
-
-            const navPagesTitle = document.getElementById("nav-pages-title");
-            navPagesTitle.textContent = data.navigation?.["pages-title"] || "Posts";
 
             if (data.navigation?.color) {
                 nav.style.backgroundColor = data.navigation.color;
@@ -40,67 +35,35 @@ function loadSettings() {
                 nav.style.position = "static";
             }
 
-            // Populate dropdown menu
-            const dropdown = document.getElementById("pages-dropdown");
-            const categories = {};
+            // Main "posts" item
+            const navPagesTitle = document.getElementById("nav-pages-title");
+            navPagesTitle.textContent = data.navigation?.["pages-title"] || "Posts";
 
-            data.pages.forEach(page => {
-                if (page.enabled) {
-                    const category = page.category || "none";
-
-                    if (category === "none") {
-                        // Add directly to the main dropdown
-                        const link = document.createElement("a");
-                        link.textContent = page.title;
-                        link.href = page.external ? page.file : "#";
-                        if (!page.external) link.onclick = () => loadPage(page.file);
-                        dropdown.appendChild(link);
-                    } else {
-                        // Create or find the category dropdown
-                        if (!categories[category]) {
-                            // Create a submenu container
-                            const submenuContainer = document.createElement("div");
-                            submenuContainer.className = "dropdown-submenu";
-
-                            // Submenu title
-                            const submenuTitle = document.createElement("button");
-                            submenuTitle.textContent = category;
-                            submenuContainer.appendChild(submenuTitle);
-
-                            // Submenu content
-                            const submenuContent = document.createElement("div");
-                            submenuContent.className = "dropdown-content";
-                            submenuContainer.appendChild(submenuContent);
-
-                            dropdown.appendChild(submenuContainer);
-                            categories[category] = submenuContent;
-                        }
-
-                        // Add the page link to the category
-                        const link = document.createElement("a");
-                        link.textContent = page.title;
-                        link.href = page.external ? page.file : "#";
-                        if (!page.external) link.onclick = () => loadPage(page.file);
-                        categories[category].appendChild(link);
-                    }
-                }
-            });
-
-            // Add external link if enabled
+            // external link
             if (data.navigation?.["external-url"]?.enabled) {
                 const externalContainer = document.getElementById("external-nav-item");
-                const externalLink = document.createElement("a");
-                externalLink.href = data.navigation["external-url"].url;
-                externalLink.textContent = data.navigation["external-url"].title;
-                externalLink.target = "_blank";
-                externalLink.rel = "noopener noreferrer";
-                externalContainer.appendChild(externalLink);
+                if (externalContainer) {
+                    const externalLink = document.createElement("a");
+                    externalLink.href = data.navigation["external-url"].url || "#";
+                    externalLink.textContent = data.navigation["external-url"].title || "External Link";
+                    externalLink.target = "_blank";
+                    externalLink.rel = "noopener noreferrer";
+                    externalContainer.appendChild(externalLink);
+                } else {
+                    console.warn("External navigation container not found.");
+                }
             }
 
-            // Configure footer
+            // sidebar
+            populateSidebar(data.pages);
+
+            const sidebar = document.getElementById("sidebar");
+            sidebar.style.backgroundColor = data.navigation?.["sidebar-color"] || "#222";
+
+            // footer
             const footer = document.getElementById("footer");
             if (data.footer?.enabled) {
-                footer.textContent = data.footer.content;
+                footer.textContent = data.footer.content || "";
                 footer.style.backgroundColor = data.footer.color || "#333";
                 if (data.footer.fixed) {
                     footer.classList.add("fixed");
@@ -112,7 +75,7 @@ function loadSettings() {
                     const creditsDiv = document.createElement("div");
                     const creditsText = document.createTextNode("Made with ");
                     const creditsLink = document.createElement("a");
-                    creditsLink.href = "https://github.com";
+                    creditsLink.href = "https://github.com/mario-fox/Microblog";
                     creditsLink.textContent = "Microblog";
                     creditsLink.target = "_blank";
 
@@ -123,7 +86,7 @@ function loadSettings() {
                 }
             }
 
-            // Load the default page
+            // Load default page
             loadPage(data["base-page"] || "readme.md");
         })
         .catch(error => {
@@ -131,18 +94,78 @@ function loadSettings() {
         });
 }
 
-// Function to load a page into the content area
+function populateSidebar(pages) {
+    const sidebarContent = document.getElementById("sidebar-content");
+    sidebarContent.innerHTML = '';
+
+    const categories = {};
+
+    pages.forEach(page => {
+        if (page.enabled) {
+            const category = page.category || "none";
+
+            if (category === "none") {
+                // Add directly to sidebar
+                const link = document.createElement("a");
+                link.textContent = page.title;
+                link.href = page.external ? page.file : "#";
+                if (!page.external) link.onclick = () => loadPage(page.file);
+                sidebarContent.appendChild(link);
+            } else {
+                // Create or find category section
+                if (!categories[category]) {
+                    // Create category
+                    const categoryContainer = document.createElement("div");
+                    categoryContainer.className = "sidebar-category";
+
+                    const categoryTitle = document.createElement("div");
+                    categoryTitle.textContent = category;
+                    categoryTitle.className = "sidebar-category-title";
+                    categoryContainer.appendChild(categoryTitle);
+
+                    sidebarContent.appendChild(categoryContainer);
+                    categories[category] = categoryContainer;
+                }
+
+                // Add page to category
+                const link = document.createElement("a");
+                link.textContent = page.title;
+                link.href = page.external ? page.file : "#";
+                if (!page.external) link.onclick = () => loadPage(page.file);
+                categories[category].appendChild(link);
+            }
+        }
+    });
+}
+
 function loadPage(filePath) {
+    closeSidebar();
+
     fetch(filePath)
         .then(response => response.ok ? response.text() : Promise.reject(`HTTP error! status: ${response.status}`))
         .then(markdown => {
             document.getElementById('content').innerHTML = marked.parse(markdown);
         })
         .catch(error => {
-            document.getElementById('content').textContent = "Error loading Markdown file.";
+            document.getElementById('content').textContent = "Could not load Markdown file '" + filePath + "'!";
             console.error("Error:", error);
         });
 }
 
-// Load settings.json on page load
-loadSettings();
+// Sidebar toggle
+function openSidebar() {
+    document.getElementById("sidebar").style.width = "250px";
+}
+
+function closeSidebar() {
+    document.getElementById("sidebar").style.width = "0";
+}
+
+
+// Event listeners
+document.getElementById("nav-pages-title").addEventListener("click", openSidebar);
+document.getElementById("hamburger-menu").addEventListener("click", openSidebar);
+document.getElementById("close-sidebar").addEventListener("click", closeSidebar);
+
+// Run on pageload
+window.addEventListener('load', loadSettings);

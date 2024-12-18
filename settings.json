@@ -15,12 +15,13 @@
       "enabled": true,
       "title": "GitHub",
       "url": "https://github.com/mario-fox/Microblog"
-    }
+    },
+    "sidebar-color": "#4d4d4d"
   },
   "footer": {
     "enabled": true,
     "color": "#333",
-    "fixed": false,
+    "fixed": true,
     "content": "© 2024 PixelFox.io | All rights reserved."
   },
   "pages": [
