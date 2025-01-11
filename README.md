@@ -1,5 +1,5 @@
 
-# Microblog  ![GitHub Repo stars](https://img.shields.io/github/stars/mario-fox/microblog)
+# Microblog  ![GitHub Repo stars](https://img.shields.io/github/stars/mario-to-lowercase/microblog)
 
 **Microblog** is a lightweight, minimalist blogging tool that allows you to create and share posts using Markdown. With its simple setup and file-based storage, Microblog is perfect for anyone looking to maintain a clean and straightforward blogging experience.
 
@@ -38,7 +38,7 @@ Explore the features and experience how easy it is to create and manage your blo
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/mario-fox/microblog.git
+   git clone https://github.com/mario-to-lowercase/microblog.git
    ```
 2. Place your `.md` files in the root folder.  
 3. Open `index.html` in your browser to start blogging.
@@ -97,7 +97,7 @@ Below is a breakdown of the key settings and their purpose.
       "external-url": {
           "enabled": true,
           "title": "GitHub",
-          "url": "https://github.com/mario-fox/Microblog"
+          "url": "https://github.com/mario-to-lowercase/Microblog"
       },
       "sidebar-color": "#4d4d4d"
     }
@@ -173,4 +173,4 @@ We welcome contributions to improve Microblog! Follow these steps:
 
 ## 📜 License  
 
-Microblog is released under the [Apache 2.0 License](https://github.com/mario-fox/Microblog/blob/master/LICENSE).  
+Microblog is released under the [Apache 2.0 License](https://github.com/mario-to-lowercase/Microblog/blob/master/LICENSE).  
