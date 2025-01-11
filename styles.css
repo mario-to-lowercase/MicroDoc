@@ -56,7 +56,8 @@ nav button {
     padding: 20px;
     flex: 1;
     margin-left: 0;
-        transition: margin-left 0.3s;
+    margin-bottom: 4rem;
+    transition: margin-left 0.3s;
 }
 
 footer {
