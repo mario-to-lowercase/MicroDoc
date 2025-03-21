@@ -3,6 +3,8 @@
 
 **Microblog** is a lightweight, minimalist blogging tool that allows you to create and share posts using Markdown. With its simple setup and file-based storage, Microblog is perfect for anyone looking to maintain a clean and straightforward blogging experience.
 
+---
+
 ## 🌟 Features  
 
 - **🖋️ Markdown-Based**  
@@ -19,18 +21,23 @@
 
 ---
 
-## 🖥️ Demo  
+## 🖥️ Demo's
 
-You can try out a live demo of Microblog (v0.6.1) here: [Microblog Demo](https://microblog.pixelfox.io).
+You can try out a live demos of Microblog here:
+- [Official Microblog Demo](https://microblog.pixelfox.io).
+- [Pixelfox.io Website](https://pixelfox.io).
 
-Explore the features and experience how easy it is to create and manage your blog using Markdown!
+Explore the features and experience how easy it is to create and manage your blog, notes or website using Markdown!
 
 ---
 
-## 🛠️ Upcoming Features (Todo)  
+## 🛠️ Upcoming Features
 
-- **Themes**: Add and customize themes to suit your preferences.
-- **Admin Page**: Manage posts with a built-in Markdown editor.
+I'am actively developing new features and currently working on:
+
+-  **Themes**: Add and customize themes to suit your preferences.
+-  **Admin Page**: Manage posts with a built-in Markdown editor.
+-  **Light/Darkmode**: Option to set and toggle between modes
 
 ---
 
@@ -64,7 +71,7 @@ If you are using Apache, create or update your `.htaccess` file with the followi
 <IfModule mod_rewrite.c>
 ```
 
-#### Nginx (nginx.txt)
+#### Nginx
 
 If you are using Nginx, add the following configuration to your server block:
 
