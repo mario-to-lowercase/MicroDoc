@@ -1,3 +1,7 @@
+// Add this to store URL mappings
+let urlToFileMap = {};
+let fileToUrlMap = {};
+
 function loadSettings() {
     fetch('settings.json')
         .then(response => {
@@ -21,7 +25,7 @@ function loadSettings() {
                 navTitle.appendChild(logo);
             }
             navTitle.appendChild(document.createTextNode(data.navigation?.title || "Microblog"));
-            navTitle.onclick = () => loadPage(data["base-page"] || "readme.md");
+            navTitle.onclick = () => navigateToPage(data["base-page"] || "readme.md");
 
             if (data.navigation?.color) {
                 nav.style.backgroundColor = data.navigation.color;
@@ -52,6 +56,23 @@ function loadSettings() {
                 } else {
                     console.warn("External navigation container not found.");
                 }
+            }
+
+            // Create URL mappings
+            data.pages.forEach(page => {
+                if (page.enabled && !page.external) {
+                    // Default URL is the filename without extension if not specified
+                    const url = page.url || `/${page.file.replace(/\.md$/, '').replace(/^pages\//, '')}`;
+                    urlToFileMap[url] = page.file;
+                    fileToUrlMap[page.file] = url;
+                }
+            });
+
+            // Default page URL
+            const defaultFile = data["base-page"] || "readme.md";
+            if (!fileToUrlMap[defaultFile]) {
+                fileToUrlMap[defaultFile] = "/";
+                urlToFileMap["/"] = defaultFile;
             }
 
             // sidebar
@@ -86,8 +107,8 @@ function loadSettings() {
                 }
             }
 
-            // Load default page
-            loadPage(data["base-page"] || "readme.md");
+            // Load page based on current URL
+            handleUrlNavigation();
         })
         .catch(error => {
             console.error("Error loading settings.json:", error);
@@ -108,8 +129,19 @@ function populateSidebar(pages) {
                 // Add directly to sidebar
                 const link = document.createElement("a");
                 link.textContent = page.title;
-                link.href = page.external ? page.file : "#";
-                if (!page.external) link.onclick = () => loadPage(page.file);
+
+                if (page.external) {
+                    link.href = page.file;
+                    link.target = "_blank";
+                } else {
+                    // Use the URL for internal pages
+                    link.href = page.url || fileToUrlMap[page.file] || "/";
+                    link.onclick = (e) => {
+                        e.preventDefault();
+                        navigateToPage(page.file);
+                    };
+                }
+
                 sidebarContent.appendChild(link);
             } else {
                 // Create or find category section
@@ -130,17 +162,41 @@ function populateSidebar(pages) {
                 // Add page to category
                 const link = document.createElement("a");
                 link.textContent = page.title;
-                link.href = page.external ? page.file : "#";
-                if (!page.external) link.onclick = () => loadPage(page.file);
+
+                if (page.external) {
+                    link.href = page.file;
+                    link.target = "_blank";
+                } else {
+                    // Use the URL for internal pages
+                    link.href = page.url || fileToUrlMap[page.file] || "/";
+                    link.onclick = (e) => {
+                        e.preventDefault();
+                        navigateToPage(page.file);
+                    };
+                }
+
                 categories[category].appendChild(link);
             }
         }
     });
 }
 
-function loadPage(filePath) {
+// New function to navigate to a page and update URL
+function navigateToPage(filePath) {
     closeSidebar();
 
+    // Get the URL for this file
+    const url = fileToUrlMap[filePath] || `/${filePath.replace(/\.md$/, '')}`;
+
+    // Update browser history
+    history.pushState({ filePath }, '', url);
+
+    // Load the page content
+    loadPageContent(filePath);
+}
+
+// Separate content loading from navigation
+function loadPageContent(filePath) {
     fetch(filePath)
         .then(response => response.ok ? response.text() : Promise.reject(`HTTP error! status: ${response.status}`))
         .then(markdown => {
@@ -152,6 +208,40 @@ function loadPage(filePath) {
         });
 }
 
+// Handle navigation when URL changes
+function handleUrlNavigation() {
+    // Get current path
+    const path = window.location.pathname;
+
+    // Find matching file
+    const filePath = urlToFileMap[path];
+
+    if (filePath) {
+        loadPageContent(filePath);
+    } else {
+        // Check if we're at the root path
+        if (path === '/' || path === '') {
+            const defaultFile = urlToFileMap['/'];
+            if (defaultFile) {
+                loadPageContent(defaultFile);
+            } else {
+                document.getElementById('content').textContent = "Default page not found!";
+            }
+        } else {
+            document.getElementById('content').textContent = "Page not found!";
+        }
+    }
+}
+
+// Handle browser back/forward buttons
+window.onpopstate = function (event) {
+    if (event.state && event.state.filePath) {
+        loadPageContent(event.state.filePath);
+    } else {
+        handleUrlNavigation();
+    }
+};
+
 // Sidebar toggle
 function openSidebar() {
     document.getElementById("sidebar").style.width = "250px";
@@ -160,7 +250,6 @@ function openSidebar() {
 function closeSidebar() {
     document.getElementById("sidebar").style.width = "0";
 }
-
 
 // Event listeners
 document.getElementById("nav-pages-title").addEventListener("click", openSidebar);

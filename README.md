@@ -21,7 +21,7 @@
 
 ## 🖥️ Demo  
 
-You can try out a live demo of Microblog (v0.5.1) here: [Microblog Demo](https://microblog.pixelfox.io).
+You can try out a live demo of Microblog (v0.6.0) here: [Microblog Demo](https://microblog.pixelfox.io).
 
 Explore the features and experience how easy it is to create and manage your blog using Markdown!
 
@@ -107,6 +107,7 @@ Below is a breakdown of the key settings and their purpose.
   Pages can be used to create different sections or posts on your blog.
   - `file`: The path to the `.md` file that contains the content for the page.
   - `title`: The title of the page, which will be displayed in the navigation and header.
+  - `url`: The url that will be used for this page in the adressbar.
   - `category`: The category that the page belongs to, helping you organize and group similar content.
   - `enabled`: A boolean flag that indicates whether the page is active and should be displayed. Set this to `true` to include the page, or `false` to hide it from the navigation.
 - Example:
@@ -115,12 +116,14 @@ Below is a breakdown of the key settings and their purpose.
     {
         "file": "readme.md",
         "title": "Readme",
+        "url": "/",
         "category": "General",
         "enabled": true
     },
     {
         "file": "demo.md",
         "title": "Markdown Overview",
+        "url": "/markdown",
         "category": "Demos",
         "enabled": false
     }

@@ -8,7 +8,7 @@
       "enabled": true,
       "url": "fox.png"
     },
-    "pages-title": "Posts",
+    "pages-title": "Pages",
     "color": "#1e90ff",
     "sticky": true,
     "external-url": {
@@ -28,21 +28,24 @@
     {
       "file": "readme.md",
       "title": "Readme",
+      "url": "/",
       "category": "General",
       "enabled": true
     },
     {
       "file": "LICENSE.md",
       "title": "License",
+      "url": "/license",
       "category": "General",
       "enabled": true
     },
     {
       "file": "demo.md",
       "title": "Markdown Overview",
+      "url": "/markdown",
       "category": "none",
       "enabled": true
     }
   ],
-  "credits": true
+  "credits": false
 }
