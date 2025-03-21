@@ -1,6 +1,6 @@
 {
   "sitename": "Microblog | PixelFox.io",
-  "base-page": "pages/readme.md",
+  "base-page": "readme.md",
   "favicon": "favicon.ico",
   "navigation": {
     "title": "Microblog",
@@ -26,7 +26,7 @@
   },
   "pages": [
     {
-      "file": "pages/readme.md",
+      "file": "readme.md",
       "title": "Readme",
       "url": "/",
       "category": "General",
