@@ -1,6 +1,6 @@
 {
   "sitename": "Microblog | PixelFox.io",
-  "base-page": "readme.md",
+  "base-page": "pages/readme.md",
   "favicon": "favicon.ico",
   "navigation": {
     "title": "Microblog",
@@ -26,21 +26,21 @@
   },
   "pages": [
     {
-      "file": "readme.md",
+      "file": "pages/readme.md",
       "title": "Readme",
       "url": "/",
       "category": "General",
       "enabled": true
     },
     {
-      "file": "LICENSE.md",
+      "file": "pages/LICENSE.md",
       "title": "License",
       "url": "/license",
       "category": "General",
       "enabled": true
     },
     {
-      "file": "demo.md",
+      "file": "pages/demo.md",
       "title": "Markdown Overview",
       "url": "/markdown",
       "category": "none",
