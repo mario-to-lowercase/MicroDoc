@@ -21,7 +21,7 @@
 
 ## 🖥️ Demo  
 
-You can try out a live demo of Microblog (v0.6.0) here: [Microblog Demo](https://microblog.pixelfox.io).
+You can try out a live demo of Microblog (v0.6.1) here: [Microblog Demo](https://microblog.pixelfox.io).
 
 Explore the features and experience how easy it is to create and manage your blog using Markdown!
 
