@@ -210,8 +210,18 @@ function loadPageContent(filePath) {
 
 // Handle navigation when URL changes
 function handleUrlNavigation() {
-    // Get current path
-    const path = window.location.pathname;
+    // Check if we have a path parameter (for GitHub Pages workaround)
+    const urlParams = new URLSearchParams(window.location.search);
+    const pathParam = urlParams.get('path');
+
+    // Get current path (either from URL or from path parameter)
+    const path = pathParam || window.location.pathname;
+
+    // If we came from the 404 page with a path parameter, update the URL
+    if (pathParam) {
+        // Replace the URL without reloading the page
+        window.history.replaceState(null, '', pathParam);
+    }
 
     // Find matching file
     const filePath = urlToFileMap[path];

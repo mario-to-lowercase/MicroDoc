@@ -45,6 +45,39 @@ Explore the features and experience how easy it is to create and manage your blo
 
 ---
 
+## 🌍 Server Configuration
+
+To enable direct access to pages using custom URLs, include the following configuration based on your web server:
+
+#### Apache (.htaccess)
+
+If you are using Apache, create or update your `.htaccess` file with the following rules:
+```
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  RewriteRule ^(.*)$ index.html?url=$1 [QSA,L]
+<IfModule mod_rewrite.c>
+```
+
+#### Nginx (nginx.txt)
+
+If you are using Nginx, add the following configuration to your server block:
+
+```
+location / {
+    try_files $uri /index.html?url=$uri;
+}
+```
+
+This ensures that custom URLs are properly routed to the index.html file, allowing your Microblog pages to be accessible via their defined URLs.
+
+---
+
 ## 🛠️ Configuration Settings
 Microblog is easily customizable through the settings.json file. This file allows you to configure various aspects of your blog, such as the site title, navigation, footer, and pages.
 To customize your Microblog experience, simply open the `settings.json` file and adjust the parameters according to your preferences.
