@@ -95,14 +95,21 @@ code {
     color: #d63384;
 }
 
+p img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     .nav-right {
-        display: none!important;
+        display: none !important;
     }
 
     .hamburger {
-        display: block!important;
+        display: block !important;
     }
 }
 
