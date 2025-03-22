@@ -133,7 +133,7 @@ The `settings.json` file controls how your Microblog site works. Here's a minima
     "enabled": true,
     "color": "#333",
     "fixed": false,
-    "content": "© 2024 My Blog | All rights reserved."
+    "content": "© 2025 My Blog | All rights reserved."
   },
   "credits": true
 }

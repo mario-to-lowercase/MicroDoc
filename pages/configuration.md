@@ -420,7 +420,7 @@ Specifies the HTML content to display in the footer.
 **Default**: "© [current year] | All rights reserved."  
 **Example**:
 ```json
-"content": "© 2024 My Blog | <a href='/privacy'>Privacy Policy</a> | <a href='/terms'>Terms of Use</a>"
+"content": "© 2025 My Blog | <a href='/privacy'>Privacy Policy</a> | <a href='/terms'>Terms of Use</a>"
 ```
 
 **Technical Details**:
