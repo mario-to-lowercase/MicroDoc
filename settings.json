@@ -1,6 +1,6 @@
 {
-  "sitename": "Microblog | PixelFox.io",
-  "base-page": "readme.md",
+  "sitename": "Microblog Documentation | PixelFox.io",
+  "base-page": "pages/welcome.md",
   "favicon": "favicon.ico",
   "navigation": {
     "title": "Microblog",
@@ -8,7 +8,7 @@
       "enabled": true,
       "url": "fox.png"
     },
-    "pages-title": "Pages",
+    "pages-title": "Documentation",
     "color": "#9e9e9e",
     "sticky": true,
     "external-url": {
@@ -26,24 +26,59 @@
   },
   "pages": [
     {
-      "file": "readme.md",
-      "title": "Readme",
+      "file": "pages/welcome.md",
+      "title": "Introduction",
       "url": "/",
       "category": "General",
       "enabled": true
     },
     {
-      "file": "pages/LICENSE.md",
-      "title": "License",
-      "url": "/license",
+      "file": "pages/microblog-demo.md",
+      "title": "Demo's",
+      "url": "/demos",
       "category": "General",
       "enabled": true
     },
     {
-      "file": "pages/demo.md",
-      "title": "Markdown Overview",
-      "url": "/markdown",
-      "category": "none",
+      "file": "pages/features.md",
+      "title": "Features",
+      "url": "/features",
+      "category": "General",
+      "enabled": true
+    },
+    {
+      "file": "pages/getting-started.md",
+      "title": "Getting Started",
+      "url": "/getting-started",
+      "category": "Documentation",
+      "enabled": true
+    },
+    {
+      "file": "pages/configuration.md",
+      "title": "Microblog Configuration",
+      "url": "/configuration",
+      "category": "Documentation",
+      "enabled": true
+    },
+    {
+      "file": "pages/server-configuration.md",
+      "title": "Server Configuration",
+      "url": "/server-configuration",
+      "category": "Documentation",
+      "enabled": true
+    },
+    {
+      "file": "pages/contributing.md",
+      "title": "Contributing",
+      "url": "/contributing",
+      "category": "Documentation",
+      "enabled": true
+    },
+    {
+      "file": "readme.md",
+      "title": "Readme",
+      "url": "/readme",
+      "category": "Documentation",
       "enabled": true
     }
   ],

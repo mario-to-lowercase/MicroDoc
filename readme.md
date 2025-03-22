@@ -26,7 +26,7 @@
 Explore the features and experience how easy it is to create and manage your blog, notes or website using Markdown!
 
 You can try out a live demos of Microblog here:
-- [Official Microblog Demo](https://microblog.pixelfox.io).
+- [Official Microblog Documentation](https://microblog.pixelfox.io).
 - [Pixelfox.io Website](https://pixelfox.io).
 
 If you're using Microblog for your site, feel free to reach out to get your website listed here as an example!
