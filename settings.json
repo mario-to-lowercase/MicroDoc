@@ -75,6 +75,13 @@
       "enabled": true
     },
     {
+      "file": "pages/markdown-demo.md",
+      "title": "Markdown Demo",
+      "url": "/markdown-demo",
+      "category": "Documentation",
+      "enabled": true
+    },
+    {
       "file": "readme.md",
       "title": "Readme",
       "url": "/readme",
