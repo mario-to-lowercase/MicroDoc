@@ -1,4 +1,4 @@
-class Microblog {
+class MicroDoc {
     constructor() {
         // Initialize properties
         this.urlToFileMap = {};
@@ -36,7 +36,7 @@ class Microblog {
                 console.log("Settings loaded successfully");
 
                 // site name & favicon
-                document.title = data.sitename || "Microblog by PixelFox.io";
+                document.title = data.sitename || "MicroDoc by PixelFox.io";
                 document.getElementById("favicon").href = data.favicon || "favicon.ico";
 
                 // navigation
@@ -48,7 +48,7 @@ class Microblog {
                     logo.alt = "Logo";
                     navTitle.appendChild(logo);
                 }
-                navTitle.appendChild(document.createTextNode(data.navigation?.title || "Microblog"));
+                navTitle.appendChild(document.createTextNode(data.navigation?.title || "MicroDoc"));
                 navTitle.onclick = () => this.navigateToPage(data["base-page"] || "readme.md");
 
                 if (data.navigation?.color) {
@@ -120,8 +120,8 @@ class Microblog {
                         const creditsDiv = document.createElement("div");
                         const creditsText = document.createTextNode("Made with ");
                         const creditsLink = document.createElement("a");
-                        creditsLink.href = "https://github.com/mario-fox/Microblog";
-                        creditsLink.textContent = "Microblog";
+                        creditsLink.href = "https://github.com/mario-fox/MicroDoc";
+                        creditsLink.textContent = "MicroDoc";
                         creditsLink.target = "_blank";
 
                         creditsDiv.appendChild(creditsText);
@@ -280,5 +280,5 @@ class Microblog {
     }
 }
 
-// Create an instance of the Microblog class when the script loads
-const microblog = new Microblog();
+// Create an instance of the MicroDoc class when the script loads
+const MicroDoc = new MicroDoc();
