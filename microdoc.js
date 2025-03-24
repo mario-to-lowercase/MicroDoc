@@ -120,7 +120,7 @@ class MicroDoc {
                         const creditsDiv = document.createElement("div");
                         const creditsText = document.createTextNode("Made with ");
                         const creditsLink = document.createElement("a");
-                        creditsLink.href = "https://github.com/mario-fox/MicroDoc";
+                        creditsLink.href = "https://microdoc.pixelfox.io";
                         creditsLink.textContent = "MicroDoc";
                         creditsLink.target = "_blank";
 
