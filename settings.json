@@ -1,9 +1,9 @@
 {
-  "sitename": "Microblog Documentation | PixelFox.io",
+  "sitename": "MicroDoc  Documentation | PixelFox.io",
   "base-page": "pages/welcome.md",
   "favicon": "favicon.ico",
   "navigation": {
-    "title": "Microblog",
+    "title": "MicroDoc ",
     "logo": {
       "enabled": true,
       "url": "fox.png"
@@ -14,7 +14,7 @@
     "external-url": {
       "enabled": true,
       "title": "GitHub",
-      "url": "https://github.com/mario-fox/Microblog"
+      "url": "https://github.com/mario-fox/MicroDoc "
     },
     "sidebar-color": "#4d4d4d"
   },
@@ -33,7 +33,7 @@
       "enabled": true
     },
     {
-      "file": "pages/microblog-demo.md",
+      "file": "pages/MicroDoc -demo.md",
       "title": "Demo's",
       "url": "/demos",
       "category": "General",
@@ -55,7 +55,7 @@
     },
     {
       "file": "pages/configuration.md",
-      "title": "Microblog Configuration",
+      "title": "MicroDoc  Configuration",
       "url": "/configuration",
       "category": "Documentation",
       "enabled": true
