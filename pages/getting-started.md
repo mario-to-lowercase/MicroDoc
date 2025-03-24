@@ -1,12 +1,12 @@
-# 🚀 Getting Started with Microblog
+# 🚀 Getting Started with MicroDoc
 
-This comprehensive guide will walk you through setting up, configuring, and using Microblog for your website or blog.
+This comprehensive guide will walk you through setting up, configuring, and using MicroDoc for your website or blog.
 
 ---
 
 ## 📋 Prerequisites
 
-Before installing Microblog, ensure you have:
+Before installing MicroDoc, ensure you have:
 
 - Basic knowledge of HTML, Markdown, and JSON
 - A text editor for editing files (VS Code, Sublime Text, etc.)
@@ -20,31 +20,31 @@ Before installing Microblog, ensure you have:
 ### 🔄 Option 1: Clone from GitHub (Recommended)
 
 1. Open your terminal or command prompt
-2. Navigate to the directory where you want to install Microblog
+2. Navigate to the directory where you want to install MicroDoc
 3. Clone the repository:
    ```bash
-   git clone https://github.com/mario-to-lowercase/microblog.git
+   git clone https://github.com/mario-to-lowercase/MicroDoc.git
    ```
 4. Navigate to the newly created directory:
    ```bash
-   cd microblog
+   cd MicroDoc
    ```
 
 ### 📦 Option 2: Download ZIP File
 
-1. Visit the [Microblog GitHub page](https://github.com/mario-to-lowercase/microblog)
+1. Visit the [MicroDoc GitHub page](https://github.com/mario-to-lowercase/MicroDoc)
 2. Click the "Code" button and select "Download ZIP"
 3. Extract the ZIP file to your desired location
 
 ### 🍴 Option 3: Fork the Repository
 
-If you plan to contribute to Microblog or want to maintain your own version:
+If you plan to contribute to MicroDoc or want to maintain your own version:
 
-1. Visit the [Microblog GitHub page](https://github.com/mario-to-lowercase/microblog)
+1. Visit the [MicroDoc GitHub page](https://github.com/mario-to-lowercase/MicroDoc)
 2. Click the "Fork" button in the top-right corner
 3. Clone your forked repository:
    ```bash
-   git clone https://github.com/your-username/microblog.git
+   git clone https://github.com/your-username/MicroDoc.git
    ```
 
 ---
@@ -54,12 +54,12 @@ If you plan to contribute to Microblog or want to maintain your own version:
 After installation, you'll have a directory with these key files and folders:
 
 ```
-microblog/
+MicroDoc/
 │
 ├── index.html         # Main HTML file that loads the blog
 ├── style.css          # Default styling
 ├── custon.css         # Custom styling
-├── microblog.js       # Core functionality 
+├── microdoc.js        # Core functionality 
 ├── settings.json      # Configuration file
 ├── favicon.ico        # Default favicon
 ├── logo.png           # Logo for navbar
@@ -77,11 +77,11 @@ microblog/
 
 2. Open `my-first-post.md` in your text editor and add some content:
    ```markdown
-   # My First Microblog Post
+   # My First MicroDoc Post
 
-   Welcome to my blog! This is my first post using Microblog.
+   Welcome to my blog! This is my first post using MicroDoc.
 
-   ## Why I Chose Microblog
+   ## Why I Chose MicroDoc
 
    I wanted a simple, lightweight blogging platform that:
 
@@ -97,11 +97,11 @@ microblog/
 
 ## ⚙️ Basic Configuration
 
-The `settings.json` file controls how your Microblog site works. Here's a minimal configuration example:
+The `settings.json` file controls how your MicroDoc site works. Here's a minimal configuration example:
 
 ```json
 {
-  "sitename": "My Microblog",
+  "sitename": "My MicroDoc",
   "base-page": "my-first-post.md",
   "favicon": "favicon.ico",
   "navigation": {
@@ -147,7 +147,7 @@ The `settings.json` file controls how your Microblog site works. Here's a minima
 
 For basic testing, you can simply open the `index.html` file in your browser:
 
-1. Navigate to your Microblog directory
+1. Navigate to your MicroDoc directory
 2. Double-click on `index.html` or open it with your browser
 
 Note: Some features like URL routing may not work properly with direct file access.
@@ -158,7 +158,7 @@ For more accurate testing, use a local web server:
 
 #### 🐍 Using Python (Simple Option)
 
-1. Navigate to your Microblog directory in the terminal
+1. Navigate to your MicroDoc directory in the terminal
 2. Run one of these commands:
    - Python 3: `python -m http.server`
    - Python 2: `python -m SimpleHTTPServer`
@@ -170,7 +170,7 @@ For more accurate testing, use a local web server:
    ```bash
    npm install -g http-server
    ```
-2. Navigate to your Microblog directory
+2. Navigate to your MicroDoc directory
 3. Run:
    ```bash
    http-server
@@ -183,11 +183,11 @@ For more accurate testing, use a local web server:
 
 ### 🐙 Deploying to GitHub Pages
 
-1. Create a GitHub repository for your Microblog site
-2. Push your Microblog files to the repository:
+1. Create a GitHub repository for your MicroDoc site
+2. Push your MicroDoc files to the repository:
    ```bash
    git add .
-   git commit -m "Initial Microblog setup"
+   git commit -m "Initial MicroDoc setup"
    git remote add origin https://github.com/your-username/your-repo-name.git
    git push -u origin main
    ```
@@ -255,7 +255,7 @@ This will group your posts by category in the navigation menu.
 
 ## 🖼️ Using Images in Your Posts
 
-1. Create an `images` folder in your Microblog directory
+1. Create an `images` folder in your MicroDoc directory
 2. Add your images to this folder
 3. Reference them in your Markdown:
    ```markdown
@@ -314,7 +314,7 @@ Edit the color values in `settings.json`:
 
 ## 🔜 Next Steps
 
-After setting up your basic Microblog, consider:
+After setting up your basic MicroDoc, consider:
 
 - Configuring server settings for better URL handling
 - Adding custom themes

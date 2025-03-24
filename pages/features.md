@@ -1,19 +1,19 @@
-# 🛠️ Upcoming Features for Microblog
+# 🛠️ Upcoming Features for MicroDoc
 
-This document outlines the features currently in development for Microblog, including detailed explanations, development status, and estimated release timeframes.
+This document outlines the features currently in development for MicroDoc, including detailed explanations, development status, and estimated release timeframes.
 
 ---
 
 ## 📋 Development Roadmap
 
-Microblog is under active development with several exciting features on the horizon. This roadmap provides transparency about our development priorities and gives users insight into what they can expect in future releases.
+MicroDoc is under active development with several exciting features on the horizon. This roadmap provides transparency about our development priorities and gives users insight into what they can expect in future releases.
 
 ---
 
 ## 👨‍💻 Admin Page
 
 ### 📝 Description
-The admin page will provide a user-friendly interface for managing Microblog content, including a built-in Markdown editor for creating and editing posts.
+The admin page will provide a user-friendly interface for managing MicroDoc content, including a built-in Markdown editor for creating and editing posts.
 
 ### ✨ Detailed Features
 - **Markdown Editor**: WYSIWYG-style editor with Markdown syntax highlighting
@@ -71,9 +71,9 @@ Beyond the major features detailed above, these additional enhancements are bein
 
 ## 💬 Feature Requests and Feedback
 
-We welcome input from the Microblog community to help prioritize and refine these upcoming features. To provide feedback or suggest new features:
+We welcome input from the MicroDoc community to help prioritize and refine these upcoming features. To provide feedback or suggest new features:
 
-1. **GitHub Issues**: Create or comment on issues in the [GitHub repository](https://github.com/mario-to-lowercase/microblog/issues)
+1. **GitHub Issues**: Create or comment on issues in the [GitHub repository](https://github.com/mario-to-lowercase/MicroDoc/issues)
 2. **Discussions**: Join conversations in the GitHub Discussions section
 3. **Pull Requests**: Submit working implementations or prototypes of features you'd like to see
 
@@ -87,12 +87,12 @@ When providing feedback, please:
 
 ## 🧭 Development Principles
 
-As we develop these new features, we remain committed to Microblog's core principles:
+As we develop these new features, we remain committed to MicroDoc's core principles:
 
-1. **Simplicity First**: Features must maintain the lightweight, minimalist nature of Microblog
-2. **No Database Dependency**: Preserve the file-based approach that makes Microblog easy to deploy
+1. **Simplicity First**: Features must maintain the lightweight, minimalist nature of MicroDoc
+2. **No Database Dependency**: Preserve the file-based approach that makes MicroDoc easy to deploy
 3. **Performance Focus**: New features should not significantly impact load times or responsiveness
 4. **Accessibility**: All features must be accessible to users with different abilities
 5. **Progressive Enhancement**: Core functionality should work even if JavaScript is disabled
 
-These principles guide our development process and help ensure that Microblog remains true to its original vision as it evolves.
+These principles guide our development process and help ensure that MicroDoc remains true to its original vision as it evolves.

@@ -1,18 +1,18 @@
-# 📝 Introduction to Microblog
+# 📝 Introduction to MicroDoc
 
-**Microblog** is a lightweight, minimalist blogging tool designed for simplicity and ease of use. It enables content creators to focus on writing without the complexity of traditional content management systems.
+**MicroDoc** is a lightweight, minimalist blogging tool designed for simplicity and ease of use. It enables content creators to focus on writing without the complexity of traditional content management systems.
 
 ---
 
-## 🤔 What is Microblog?
+## 🤔 What is MicroDoc?
 
-**Microblog** was created to provide a streamlined blogging experience that prioritizes content over complicated interfaces and setups. Unlike traditional blogging platforms that require databases, user accounts, and complex server configurations, Microblog uses a file-based approach that makes it incredibly easy to set up and maintain.
+**MicroDoc** was created to provide a streamlined blogging experience that prioritizes content over complicated interfaces and setups. Unlike traditional blogging platforms that require databases, user accounts, and complex server configurations, MicroDoc uses a file-based approach that makes it incredibly easy to set up and maintain.
 
 ---
 
 ## 💡 Core Philosophy
 
-The core philosophy behind Microblog is **simplicity without sacrifice**. While keeping the system lightweight and minimal, Microblog still offers the essential features needed for an effective blogging platform:
+The core philosophy behind MicroDoc is **simplicity without sacrifice**. While keeping the system lightweight and minimal, MicroDoc still offers the essential features needed for an effective blogging platform:
 
 - ✨ Clean, distraction-free writing experience
 - 📚 Easy content organization
@@ -26,7 +26,7 @@ The core philosophy behind Microblog is **simplicity without sacrifice**. While 
 
 ### 🖋️ Markdown-Based Content
 
-Microblog uses Markdown as its foundation for content creation, offering several advantages:
+MicroDoc uses Markdown as its foundation for content creation, offering several advantages:
 
 - **Intuitive Syntax**: Markdown is designed to be easy to read and write, with a gentle learning curve.
 - **Focus on Content**: Writers can concentrate on their content rather than formatting.
@@ -36,7 +36,7 @@ Microblog uses Markdown as its foundation for content creation, offering several
 
 ### 🚀 Lightweight Architecture
 
-Microblog's architecture consists of only four essential files:
+MicroDoc's architecture consists of only four essential files:
 - **HTML**: The structure of your blog
 - **CSS**: The styling and visual appearance
 - **JavaScript**: The functionality and interactivity
@@ -50,7 +50,7 @@ This minimalist approach offers several benefits:
 
 ### 📂 File-Based Storage
 
-Instead of using databases, Microblog stores content as individual Markdown files:
+Instead of using databases, MicroDoc stores content as individual Markdown files:
 
 - **Simplicity**: No database setup, configuration, or management required.
 - **Version Control Integration**: Easily track changes to your content using Git or other version control systems.
@@ -60,9 +60,9 @@ Instead of using databases, Microblog stores content as individual Markdown file
 
 ---
 
-## 👥 Who Microblog Is For
+## 👥 Who MicroDoc Is For
 
-Microblog is ideal for:
+MicroDoc is ideal for:
 
 - ✍️ **Writers** who want to focus on content creation without technical distractions
 - 💻 **Developers** looking for a simple platform to document projects or share knowledge
@@ -83,4 +83,4 @@ Microblog is ideal for:
 
 ## 📜 History and Development
 
-Microblog was developed with the goal of returning to the roots of blogging - focusing on content rather than complex features. It draws inspiration from the minimalist web movement and the principles of sustainable web design, prioritizing efficiency and longevity over trendy but resource-intensive features.
+MicroDoc was developed with the goal of returning to the roots of blogging - focusing on content rather than complex features. It draws inspiration from the minimalist web movement and the principles of sustainable web design, prioritizing efficiency and longevity over trendy but resource-intensive features.

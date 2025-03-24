@@ -1,7 +1,7 @@
 
-# MicroDoc  ![GitHub Repo stars](https://img.shields.io/github/stars/mario-to-lowercase/MicroDoc)
+# Microblog  ![GitHub Repo stars](https://img.shields.io/github/stars/mario-to-lowercase/microblog)
 
-**MicroDoc** is a lightweight, minimalist blogging tool that allows you to create and share posts using Markdown. With its simple setup and file-based storage, MicroDoc is perfect for anyone looking to maintain a clean and straightforward blogging experience.
+**Microblog** is a lightweight, minimalist blogging tool that allows you to create and share posts using Markdown. With its simple setup and file-based storage, Microblog is perfect for anyone looking to maintain a clean and straightforward blogging experience.
 
 ---
 
@@ -11,7 +11,7 @@
   Write and format posts using Markdown for a clean and intuitive writing experience.
 
 - **🚀 Lightweight and Fast**  
-  Built with only four files (HTML, CSS, JS and JSON), MicroDoc is small, efficient, and easy to set up.
+  Built with only four files (HTML, CSS, JS and JSON), Microblog is small, efficient, and easy to set up.
 
 - **📂 File-Based Storage**  
   Posts are stored as plain `.md` files—no database or complicated setups required.  
@@ -25,11 +25,11 @@
 
 Explore the features and experience how easy it is to create and manage your blog, notes or website using Markdown!
 
-You can try out a live demos of MicroDoc here:
-- [Official MicroDoc Documentation](https://microdoc.pixelfox.io).
+You can try out a live demos of Microblog here:
+- [Official Microblog Documentation](https://microblog.pixelfox.io).
 - [Pixelfox.io Website](https://pixelfox.io).
 
-If you're using MicroDoc for your site, feel free to reach out to get your website listed here as an example!
+If you're using Microblog for your site, feel free to reach out to get your website listed here as an example!
 
 ---
 
@@ -47,7 +47,7 @@ I'am actively developing new features and currently working on:
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/mario-to-lowercase/MicroDoc.git
+   git clone https://github.com/mario-to-lowercase/microblog.git
    ```
 2. Place your `.md` files in the root folder.  
 3. Open `index.html` in your browser to start blogging.
@@ -83,13 +83,13 @@ location / {
 }
 ```
 
-This ensures that custom URLs are properly routed to the index.html file, allowing your MicroDoc pages to be accessible via their defined URLs.
+This ensures that custom URLs are properly routed to the index.html file, allowing your Microblog pages to be accessible via their defined URLs.
 
 ---
 
 ## 🛠️ Configuration Settings
-MicroDoc is easily customizable through the settings.json file. This file allows you to configure various aspects of your blog, such as the site title, navigation, footer, and pages.
-To customize your MicroDoc experience, simply open the `settings.json` file and adjust the parameters according to your preferences.
+Microblog is easily customizable through the settings.json file. This file allows you to configure various aspects of your blog, such as the site title, navigation, footer, and pages.
+To customize your Microblog experience, simply open the `settings.json` file and adjust the parameters according to your preferences.
 For example, to change the site title, update the `sitename` field, or to enable the sticky navigation bar, set `sticky` to `true`.
 
 Below is a breakdown of the key settings and their purpose.
@@ -98,7 +98,7 @@ Below is a breakdown of the key settings and their purpose.
 - Description: Sets the title of your blog, which will appear in the browser tab.
 - Example:
   ```json
-    "sitename": "MicroDoc | PixelFox.io"
+    "sitename": "Microblog | PixelFox.io"
   ```
 ### 📑 base-page
 - Description: Specifies the default page to be displayed when opening your blog. Typically, this will be a `.md` file.
@@ -128,7 +128,7 @@ Below is a breakdown of the key settings and their purpose.
 - Example:
   ```json
     "navigation": {
-      "title": "MicroDoc",
+      "title": "Microblog",
       "logo": {
         "enabled": true,
         "url": "logo.png"
@@ -139,7 +139,7 @@ Below is a breakdown of the key settings and their purpose.
       "external-url": {
           "enabled": true,
           "title": "GitHub",
-          "url": "https://github.com/mario-to-lowercase/MicroDoc"
+          "url": "https://github.com/mario-to-lowercase/Microblog"
       },
       "sidebar-color": "#4d4d4d"
     }
@@ -188,7 +188,7 @@ Below is a breakdown of the key settings and their purpose.
     }
   ```
 ### 🎨 credits
-- Description: Toggles the display of credits. When set to true, the credits `Made with MicroDoc` will be shown in the footer.
+- Description: Toggles the display of credits. When set to true, the credits `Made with Microblog` will be shown in the footer.
 - Example:
   ```json
     "credits": true
@@ -197,7 +197,7 @@ Below is a breakdown of the key settings and their purpose.
 
 ## 🤝 Contributing  
 
-We welcome contributions to improve MicroDoc! Follow these steps:  
+We welcome contributions to improve Microblog! Follow these steps:  
 
 1. Fork the repository.  
 2. Create a new branch:  
@@ -218,4 +218,4 @@ We welcome contributions to improve MicroDoc! Follow these steps:
 
 ## 📜 License  
 
-MicroDoc is released under the [Apache 2.0 License](https://github.com/mario-to-lowercase/MicroDoc/blob/master/LICENSE).  
+Microblog is released under the [Apache 2.0 License](https://github.com/mario-to-lowercase/Microblog/blob/master/LICENSE).  

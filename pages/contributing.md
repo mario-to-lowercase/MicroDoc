@@ -1,6 +1,6 @@
-# 🤝 Contributing to Microblog
+# 🤝 Contributing to MicroDoc
 
-Thank you for your interest in contributing to Microblog! This document provides comprehensive guidelines for contributing to the project, whether you're fixing bugs, adding features, improving documentation, or helping in other ways.
+Thank you for your interest in contributing to MicroDoc! This document provides comprehensive guidelines for contributing to the project, whether you're fixing bugs, adding features, improving documentation, or helping in other ways.
 
 ---
 
@@ -48,13 +48,13 @@ All contributors are expected to adhere to the project's code of conduct. By par
 
 1. **Fork the Repository**
    
-   Start by forking the [Microblog repository](https://github.com/mario-to-lowercase/microblog) on GitHub by clicking the "Fork" button.
+   Start by forking the [MicroDoc repository](https://github.com/mario-to-lowercase/MicroDoc) on GitHub by clicking the "Fork" button.
 
 2. **Clone Your Fork**
    
    ```bash
-   git clone https://github.com/your-username/microblog.git
-   cd microblog
+   git clone https://github.com/your-username/MicroDoc.git
+   cd MicroDoc
    ```
 
 3. **Add Upstream Remote**
@@ -62,12 +62,12 @@ All contributors are expected to adhere to the project's code of conduct. By par
    This allows you to keep your fork synced with the original repository.
    
    ```bash
-   git remote add upstream https://github.com/mario-to-lowercase/microblog.git
+   git remote add upstream https://github.com/mario-to-lowercase/MicroDoc.git
    ```
 
 4. **Set Up Local Testing Environment**
    
-   Since Microblog is primarily front-end code, you can use any basic web server to test it locally. For example:
+   Since MicroDoc is primarily front-end code, you can use any basic web server to test it locally. For example:
    
    - Using Python:
      ```bash
@@ -143,7 +143,7 @@ Resolves #42
 
 2. **Create a Pull Request**
    
-   Go to the original Microblog repository on GitHub and click "New Pull Request". Select "compare across forks" and choose your fork and branch.
+   Go to the original MicroDoc repository on GitHub and click "New Pull Request". Select "compare across forks" and choose your fork and branch.
 
 3. **Fill in the Pull Request Template**
    
@@ -239,7 +239,7 @@ Before submitting a pull request, manually test your changes:
 
 ### 🔄 Automated Testing
 
-While Microblog currently doesn't have a formal automated testing setup, you're encouraged to:
+While MicroDoc currently doesn't have a formal automated testing setup, you're encouraged to:
 
 - Use linters to check code quality (ESLint for JavaScript, HTMLHint for HTML)
 - Validate HTML and CSS using online validators
@@ -249,7 +249,7 @@ While Microblog currently doesn't have a formal automated testing setup, you're 
 
 ## 📝 Documentation
 
-Good documentation is crucial for Microblog. When contributing, please:
+Good documentation is crucial for MicroDoc. When contributing, please:
 
 ### 💻 Code Documentation
 
@@ -297,14 +297,14 @@ When creating a new issue:
 
 ## ✨ Feature Requests
 
-Have an idea for improving Microblog? Feature requests are welcome!
+Have an idea for improving MicroDoc? Feature requests are welcome!
 
 ### 📝 Submitting a Feature Request
 
 1. Check existing issues and pull requests to ensure the feature hasn't already been suggested
 2. Create a new issue using the feature request template
 3. Clearly describe the feature and its purpose
-4. Explain how the feature would benefit Microblog users
+4. Explain how the feature would benefit MicroDoc users
 5. Include mockups or examples if applicable
 
 ### 💻 Implementing Features
@@ -342,12 +342,12 @@ If you need help with your contribution:
 Understanding the project structure will help you contribute effectively:
 
 ```
-microblog/
+MicroDoc/
 │
 ├── index.html         # Main HTML file that loads the blog
 ├── style.css          # Default styling
 ├── custon.css         # Custom styling
-├── microblog.js       # Core functionality 
+├── microdoc.js        # Core functionality 
 ├── settings.json      # Configuration file
 ├── favicon.ico        # Default favicon
 ├── logo.png           # Logo for navbar
@@ -365,7 +365,7 @@ microblog/
 
 ## 🧭 Core Design Principles
 
-When contributing to Microblog, keep these core principles in mind:
+When contributing to MicroDoc, keep these core principles in mind:
 
 1. **Simplicity**: Keep the codebase small, efficient, and easy to understand
 2. **Minimalism**: Avoid unnecessary dependencies and bloat
@@ -377,4 +377,4 @@ When contributing to Microblog, keep these core principles in mind:
 
 ## 📜 License
 
-Microblog is released under the Apache 2.0 License. By contributing to Microblog, you agree that your contributions will be licensed under the same license.
+MicroDoc is released under the Apache 2.0 License. By contributing to MicroDoc, you agree that your contributions will be licensed under the same license.

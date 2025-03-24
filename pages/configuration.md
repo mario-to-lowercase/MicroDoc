@@ -1,16 +1,16 @@
-# 🛠️ Microblog Configuration Settings Guide
+# 🛠️ MicroDoc Configuration Settings Guide
 
-This comprehensive guide explains all available configuration options in the `settings.json` file, which controls the behavior and appearance of your Microblog site.
+This comprehensive guide explains all available configuration options in the `settings.json` file, which controls the behavior and appearance of your MicroDoc site.
 
 ---
 
 ## 📄 Configuration File Overview
 
-The `settings.json` file is the central configuration point for your Microblog installation. It controls everything from basic site information to navigation structure, page definitions, and visual styling.
+The `settings.json` file is the central configuration point for your MicroDoc installation. It controls everything from basic site information to navigation structure, page definitions, and visual styling.
 
 ### 📂 File Location
 
-The `settings.json` file should be placed in the root directory of your Microblog installation.
+The `settings.json` file should be placed in the root directory of your MicroDoc installation.
 
 ### 📝 JSON Format
 
@@ -31,11 +31,11 @@ Here's a complete example of a `settings.json` file:
 
 ```json
 {
-  "sitename": "Microblog | PixelFox.io",
+  "sitename": "MicroDoc | PixelFox.io",
   "base-page": "readme.md",
   "favicon": "favicon.ico",
   "navigation": {
-    "title": "Microblog",
+    "title": "MicroDoc",
     "logo": {
       "enabled": true,
       "url": "logo.png"
@@ -46,7 +46,7 @@ Here's a complete example of a `settings.json` file:
     "external-url": {
       "enabled": true,
       "title": "GitHub",
-      "url": "https://github.com/mario-to-lowercase/Microblog"
+      "url": "https://github.com/mario-to-lowercase/MicroDoc"
     },
     "sidebar-color": "#4d4d4d"
   },
@@ -80,14 +80,14 @@ Here's a complete example of a `settings.json` file:
 
 ## 🏠 Site-wide Settings
 
-These settings control basic information about your Microblog site.
+These settings control basic information about your MicroDoc site.
 
 ### 📛 sitename
 
 The `sitename` setting defines the title that appears in the browser tab or window title bar.
 
 **Type**: String  
-**Default**: "Microblog"  
+**Default**: "MicroDoc"  
 **Example**:
 ```json
 "sitename": "My Tech Blog"
@@ -110,7 +110,7 @@ The `base-page` setting specifies which Markdown file should be displayed when a
 ```
 
 **Notes**:
-- This should be the filename of a Markdown file in your Microblog root directory
+- This should be the filename of a Markdown file in your MicroDoc root directory
 - The file must be included in your `pages` configuration (see below)
 - This page will be shown when users navigate to your site's root URL
 
@@ -128,20 +128,20 @@ The `favicon` setting specifies the icon that appears in browser tabs, bookmarks
 **Technical Details**:
 - Recommended format: ICO, PNG, or SVG
 - Recommended size: 32x32 pixels (minimum), with larger versions (up to 512x512) for high-resolution displays
-- Path is relative to the root directory of your Microblog installation
+- Path is relative to the root directory of your MicroDoc installation
 
 ---
 
 ## 🧭 Navigation Settings
 
-The `navigation` object controls the appearance and behavior of the navigation bar at the top of your Microblog site.
+The `navigation` object controls the appearance and behavior of the navigation bar at the top of your MicroDoc site.
 
 ### 🏷️ navigation.title
 
 The text that appears in the navigation bar as your site's title.
 
 **Type**: String  
-**Default**: "Microblog"  
+**Default**: "MicroDoc"  
 **Example**:
 ```json
 "title": "John's Coding Blog"
@@ -259,7 +259,7 @@ Sets the background color of the mobile navigation sidebar that appears when the
 
 ## 📄 Pages Configuration
 
-The `pages` array defines all the content pages available on your Microblog site. Each page is represented by an object with several properties.
+The `pages` array defines all the content pages available on your MicroDoc site. Each page is represented by an object with several properties.
 
 ### 📝 Page Object Properties
 
@@ -303,7 +303,7 @@ Each object in the `pages` array must have the following properties:
 The `file` property specifies the Markdown file that contains the content for this page.
 
 **Technical Details**:
-- Path is relative to the Microblog root directory
+- Path is relative to the MicroDoc root directory
 - File must exist and be a valid Markdown file
 - File should have `.md` extension
 
@@ -432,7 +432,7 @@ Specifies the HTML content to display in the footer.
 
 ## 🙏 Credits Setting
 
-The `credits` setting controls whether attribution to Microblog is displayed in the footer.
+The `credits` setting controls whether attribution to MicroDoc is displayed in the footer.
 
 **Type**: Boolean  
 **Default**: true  
@@ -442,8 +442,8 @@ The `credits` setting controls whether attribution to Microblog is displayed in 
 ```
 
 **Notes**:
-- When enabled, adds "Made with Microblog" text to the footer
-- Helps others discover the Microblog platform
+- When enabled, adds "Made with MicroDoc" text to the footer
+- Helps others discover the MicroDoc platform
 - Consider keeping this enabled to support the project
 
 ---
@@ -452,11 +452,11 @@ The `credits` setting controls whether attribution to Microblog is displayed in 
 
 ### 🎨 Custom CSS Integration
 
-While not directly part of `settings.json`, you can add custom CSS to modify the appearance of your Microblog site:
+While not directly part of `settings.json`, you can add custom CSS to modify the appearance of your MicroDoc site:
 
-1. Create a file named `custom.css` in your Microblog root directory
+1. Create a file named `custom.css` in your MicroDoc root directory
 2. Add your custom CSS rules to this file
-3. The Microblog system will automatically detect and load this file
+3. The MicroDoc system will automatically detect and load this file
 
 **Example custom.css**:
 ```css
@@ -486,7 +486,7 @@ While the base configuration supports one external link, you can modify the `ind
 
 ## ✅ Configuration Validation
 
-It's important to ensure your `settings.json` file contains valid JSON. Invalid configurations can prevent your Microblog site from loading properly.
+It's important to ensure your `settings.json` file contains valid JSON. Invalid configurations can prevent your MicroDoc site from loading properly.
 
 ### ❌ Common JSON Errors
 
@@ -512,7 +512,7 @@ Before deploying changes to your configuration, validate your JSON using:
 
 ```json
 {
-  "sitename": "My Microblog",
+  "sitename": "My MicroDoc",
   "base-page": "home.md",
   "favicon": "favicon.ico",
   "navigation": {

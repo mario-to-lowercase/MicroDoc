@@ -1,31 +1,31 @@
-# 🌍 Server Configuration for Microblog
+# 🌍 Server Configuration for MicroDoc
 
-This document provides detailed instructions for configuring various web servers to work optimally with Microblog, particularly for enabling clean URLs and proper routing.
+This document provides detailed instructions for configuring various web servers to work optimally with MicroDoc, particularly for enabling clean URLs and proper routing.
 
 ---
 
 ## 🤔 Why Server Configuration Matters
 
-Microblog uses client-side routing to create a smooth, single-page application experience. Without proper server configuration, you may encounter issues such as:
+MicroDoc uses client-side routing to create a smooth, single-page application experience. Without proper server configuration, you may encounter issues such as:
 
 - 404 errors when directly accessing URLs other than the homepage
 - Inability to refresh pages at specific routes
 - Problems with bookmarking specific pages
 - SEO limitations due to search engines being unable to properly index your content
 
-Proper server configuration ensures that all requests are correctly routed to your Microblog application, allowing it to handle the routing internally.
+Proper server configuration ensures that all requests are correctly routed to your MicroDoc application, allowing it to handle the routing internally.
 
 ---
 
 ## 🦬 Apache Configuration
 
-Apache is one of the most popular web servers and offers straightforward configuration for Microblog.
+Apache is one of the most popular web servers and offers straightforward configuration for MicroDoc.
 
 ### 📄 Using .htaccess
 
 The `.htaccess` file is the preferred method for configuring Apache when you don't have access to the main server configuration files (common with shared hosting).
 
-1. Create a file named `.htaccess` in your Microblog root directory
+1. Create a file named `.htaccess` in your MicroDoc root directory
 2. Add the following configuration:
 
 ```apache
@@ -57,9 +57,9 @@ If you have access to your Apache configuration files, you can add these rules t
 ```apache
 <VirtualHost *:80>
   ServerName yourdomain.com
-  DocumentRoot /path/to/microblog
+  DocumentRoot /path/to/microdoc
   
-  <Directory "/path/to/microblog">
+  <Directory "/path/to/microdoc">
     AllowOverride All
     Require all granted
     
@@ -110,7 +110,7 @@ Add the following to your server block in your Nginx configuration file:
 server {
     listen 80;
     server_name yourdomain.com;
-    root /path/to/microblog;
+    root /path/to/microdoc;
     
     location / {
         try_files $uri $uri/ /index.html?url=$uri;
@@ -161,7 +161,7 @@ Create a `Caddyfile` with the following content:
 
 ```
 yourdomain.com {
-    root * /path/to/microblog
+    root * /path/to/microdoc
     
     # Handle SPA routing
     try_files {path} /index.html?url={path}
@@ -192,7 +192,7 @@ caddy start
 For Microsoft IIS, you'll need to create a URL Rewrite rule.
 
 1. Install the URL Rewrite module if you haven't already
-2. Create a `web.config` file in your Microblog root directory with the following content:
+2. Create a `web.config` file in your MicroDoc root directory with the following content:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -218,7 +218,7 @@ For Microsoft IIS, you'll need to create a URL Rewrite rule.
 
 ## 🔥 Firebase Hosting Configuration
 
-If you're deploying Microblog to Firebase Hosting, create a `firebase.json` file with:
+If you're deploying MicroDoc to Firebase Hosting, create a `firebase.json` file with:
 
 ```json
 {
@@ -245,7 +245,7 @@ If you're deploying Microblog to Firebase Hosting, create a `firebase.json` file
 
 GitHub Pages doesn't support server-side redirects by default, but you can use a 404.html trick:
 
-1. Create a file named `404.html` in your Microblog root directory
+1. Create a file named `404.html` in your MicroDoc root directory
 2. Add the following content:
 
 ```html
@@ -264,7 +264,7 @@ GitHub Pages doesn't support server-side redirects by default, but you can use a
 </html>
 ```
 
-3. Update your Microblog script to handle the `url` parameter from the query string
+3. Update your MicroDoc script to handle the `url` parameter from the query string
 
 ---
 

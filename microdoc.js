@@ -281,4 +281,4 @@ class MicroDoc {
 }
 
 // Create an instance of the MicroDoc class when the script loads
-const MicroDoc = new MicroDoc();
+const microdoc = new MicroDoc();

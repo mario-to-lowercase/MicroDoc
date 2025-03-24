@@ -1,9 +1,9 @@
 {
-  "sitename": "MicroDoc  Documentation | PixelFox.io",
+  "sitename": "MicroDoc Documentation | PixelFox.io",
   "base-page": "pages/welcome.md",
   "favicon": "favicon.ico",
   "navigation": {
-    "title": "MicroDoc ",
+    "title": "MicroDoc",
     "logo": {
       "enabled": true,
       "url": "fox.png"
@@ -14,7 +14,7 @@
     "external-url": {
       "enabled": true,
       "title": "GitHub",
-      "url": "https://github.com/mario-fox/MicroDoc "
+      "url": "https://github.com/mario-fox/MicroDoc"
     },
     "sidebar-color": "#4d4d4d"
   },
@@ -27,63 +27,63 @@
   "pages": [
     {
       "file": "pages/welcome.md",
-      "title": "Introduction",
+      "title": "📝 Introduction",
       "url": "/",
       "category": "General",
       "enabled": true
     },
     {
-      "file": "pages/MicroDoc -demo.md",
-      "title": "Demo's",
+      "file": "pages/microdoc-demo.md",
+      "title": "🖥️ MicroDoc Demo's",
       "url": "/demos",
       "category": "General",
       "enabled": true
     },
     {
       "file": "pages/features.md",
-      "title": "Features",
+      "title": "🛠️ Upcoming Features",
       "url": "/features",
       "category": "General",
       "enabled": true
     },
     {
       "file": "pages/getting-started.md",
-      "title": "Getting Started",
+      "title": "🚀 Getting Started",
       "url": "/getting-started",
       "category": "Documentation",
       "enabled": true
     },
     {
       "file": "pages/configuration.md",
-      "title": "MicroDoc  Configuration",
+      "title": "🛠️ MicroDoc Configuration",
       "url": "/configuration",
       "category": "Documentation",
       "enabled": true
     },
     {
       "file": "pages/server-configuration.md",
-      "title": "Server Configuration",
+      "title": "🌍 Server Configuration",
       "url": "/server-configuration",
       "category": "Documentation",
       "enabled": true
     },
     {
       "file": "pages/contributing.md",
-      "title": "Contributing",
+      "title": "🤝 Contributing",
       "url": "/contributing",
       "category": "Documentation",
       "enabled": true
     },
     {
       "file": "pages/markdown-demo.md",
-      "title": "Markdown Demo",
+      "title": "📝 Markdown Demo",
       "url": "/markdown-demo",
       "category": "Documentation",
       "enabled": true
     },
     {
       "file": "readme.md",
-      "title": "Readme",
+      "title": "🌟 Readme",
       "url": "/readme",
       "category": "Documentation",
       "enabled": true
