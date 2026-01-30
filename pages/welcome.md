@@ -1,6 +1,6 @@
 # 📝 Introduction to MicroDoc
 
-**MicroDoc** is a lightweight, minimalist blogging tool designed for simplicity and ease of use. It enables content creators to focus on writing without the complexity of traditional content management systems.
+**MicroDoc** is a lightweight, minimalist tool for documentation, blogging, and content sharing designed for simplicity and ease of use. It enables content creators to focus on writing without the complexity of traditional content management systems while using an already well-known syntax.
 
 ---
 
@@ -19,6 +19,17 @@ The core philosophy behind MicroDoc is **simplicity without sacrifice**. While k
 - 🎨 Customizable appearance
 - ⚡ Fast performance
 - 🛠️ Low maintenance requirements
+
+---
+
+## 👥 Who MicroDoc Is For
+
+MicroDoc is ideal for:
+
+- 💻 **Developers** looking for a simple platform to document projects or share knowledge
+- ✍️ **Writers** who want to focus on content creation without technical distractions
+- 🎓 **Educators** wanting to share resources and information with students
+- 📱 **Personal bloggers** seeking a no-nonsense approach to sharing thoughts and ideas
 
 ---
 
@@ -57,17 +68,6 @@ Instead of using databases, MicroDoc stores content as individual Markdown files
 - **Direct Editing**: Edit your content directly with any text editor.
 - **Easy Backups**: Simple file copies serve as complete backups.
 - **Transparency**: Content is stored in a human-readable format that's easy to access and modify.
-
----
-
-## 👥 Who MicroDoc Is For
-
-MicroDoc is ideal for:
-
-- ✍️ **Writers** who want to focus on content creation without technical distractions
-- 💻 **Developers** looking for a simple platform to document projects or share knowledge
-- 🎓 **Educators** wanting to share resources and information with students
-- 📱 **Personal bloggers** seeking a no-nonsense approach to sharing thoughts and ideas
 
 ---
 
