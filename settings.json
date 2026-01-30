@@ -75,17 +75,24 @@
       "enabled": true
     },
     {
-      "file": "pages/markdown-demo.md",
-      "title": "📝 Markdown Demo",
-      "url": "/markdown-demo",
-      "category": "Documentation",
+      "file": "https://raw.githubusercontent.com/mario-to-lowercase/MicroDoc/refs/heads/master/readme.md",
+      "title": "📄 Readme",
+      "url": "/readme",
+      "category": "Miscalaneous",
       "enabled": true
     },
     {
-      "file": "readme.md",
-      "title": "🌟 Readme",
-      "url": "/readme",
-      "category": "Documentation",
+      "file": "https://raw.githubusercontent.com/mario-to-lowercase/MicroDoc/refs/heads/master/LICENSE",
+      "title": "📜 License",
+      "url": "/license",
+      "category": "Miscalaneous",
+      "enabled": true
+    },
+    {
+      "file": "pages/markdown-demo.md",
+      "title": "📝 Markdown Demo",
+      "url": "/markdown-demo",
+      "category": "",
       "enabled": true
     }
   ],
